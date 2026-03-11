@@ -1,0 +1,1176 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&display=swap");
+
+/* Sage and Terracotta */
+/* :root {
+  --bg: #f5f0eb;
+  --surface: #fdfaf7;
+  --border: #e0d8cc;
+  --border-strong: #c8bfb0;
+  --text-primary: #2c2416;
+  --text-secondary: #7a6a55;
+  --text-muted: #a89880;
+  --accent: #5a8a6a;
+  --accent-light: #e0ede5;
+  --accent-muted: #8ab89a;
+  --danger: #c4714a;
+  --weekly-accent: #c4714a;
+  --weekly-light: #f5e4da;
+  --shadow-sm: 0 1px 3px rgba(44, 36, 22, 0.06);
+  --shadow-md: 0 4px 12px rgba(44, 36, 22, 0.08);
+  --radius: 10px;
+  --radius-sm: 6px;
+} */
+
+/* Dusty Teal & Rose */
+/* :root {
+  --bg: #f0f5f5;
+  --surface: #ffffff;
+  --border: #cde0e0;
+  --border-strong: #a8c8c8;
+  --text-primary: #1e3035;
+  --text-secondary: #4a6a70;
+  --text-muted: #8aadb0;
+  --accent: #4a8b8c;
+  --accent-light: #d8eced;
+  --accent-muted: #7ab8b8;
+  --danger: #c47a8a;
+  --weekly-accent: #c47a8a;
+  --weekly-light: #f5e0e5;
+  --shadow-sm: 0 1px 3px rgba(30,48,53,0.06);
+  --shadow-md: 0 4px 12px rgba(30,48,53,0.08);
+  --radius: 10px;
+  --radius-sm: 6px;
+} */
+
+/* Lavender & Moss  */
+/* :root {
+  --bg: #f2f0f7;
+  --surface: #ffffff;
+  --border: #ddd8ee;
+  --border-strong: #c0b8d8;
+  --text-primary: #1e1a2e;
+  --text-secondary: #5a5470;
+  --text-muted: #9490b0;
+  --accent: #6b7faa;
+  --accent-light: #e0e5f5;
+  --accent-muted: #96a4c8;
+  --danger: #5a7a5a;
+  --weekly-accent: #5a7a5a;
+  --weekly-light: #ddeedd;
+  --shadow-sm: 0 1px 3px rgba(30, 26, 46, 0.06);
+  --shadow-md: 0 4px 12px rgba(30, 26, 46, 0.08);
+  --radius: 10px;
+  --radius-sm: 6px;
+} */
+
+/* Amber & Pine */
+:root {
+  --bg: #f7f3ec;
+  --surface: #fefcf8;
+  --border: #e8dfc8;
+  --border-strong: #d0c4a0;
+  --text-primary: #251e0f;
+  --text-secondary: #7a6a40;
+  --text-muted: #a0926a;
+  --accent: #2d6a4f;
+  --accent-light: #d8ede4;
+  --accent-muted: #74c69d;
+  --danger: #c49a3a;
+  --weekly-accent: #c49a3a;
+  --weekly-light: #f5edcc;
+  --shadow-sm: 0 1px 3px rgba(37, 30, 15, 0.06);
+  --shadow-md: 0 4px 12px rgba(37, 30, 15, 0.08);
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+
+/* Slate & Peach */
+/* :root {
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --border: #d0dce0;
+  --border-strong: #a8c0c8;
+  --text-primary: #1e2a35;
+  --text-secondary: #4a6070;
+  --text-muted: #8aa0aa;
+  --accent: #4a7a8a;
+  --accent-light: #d8e8ec;
+  --accent-muted: #7aaab8;
+  --danger: #e8936a;
+  --weekly-accent: #e8936a;
+  --weekly-light: #fce8da;
+  --shadow-sm: 0 1px 3px rgba(30, 42, 53, 0.06);
+  --shadow-md: 0 4px 12px rgba(30, 42, 53, 0.08);
+  --radius: 10px;
+  --radius-sm: 6px;
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: "DM Mono", monospace;
+  color: var(--text-primary);
+}
+
+/* ─── Page ───────────────────────────────────────────── */
+
+.entries-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 60%;
+  max-width: 780px;
+  min-width: 480px;
+  margin: auto;
+  padding-bottom: 2rem;
+}
+
+/* ─── Date Selector ──────────────────────────────────── */
+
+.date-selector {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr 1fr 1fr auto 1fr;
+  align-items: center;
+  text-align: center;
+  padding: 1.25rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.5rem;
+}
+
+.current-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.current-date h3 {
+  font-family: "Fraunces", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.current-date span {
+  font-family: "DM Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.date-selector button {
+  height: 2.2rem;
+  width: 2.2rem;
+  border: none;
+  background: transparent;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+  margin: auto;
+}
+
+.date-selector button:hover {
+  background-color: var(--border);
+  color: var(--text-primary);
+}
+
+.date-selector button:disabled {
+  color: var(--text-muted);
+  cursor: default;
+  background: transparent;
+}
+
+.date-selector .divider {
+  height: 1.4rem;
+  width: 1px;
+  background-color: var(--border-strong);
+  margin: auto;
+}
+
+/* ─── List Container ─────────────────────────────────── */
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1rem 0;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.list-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.list-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.list-container::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 2px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+/* Section headers */
+.list-wrap > h2 {
+  font-family: "DM Mono", monospace;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 0.35rem 0;
+  padding: 0 0.25rem;
+}
+
+.list > h3 {
+  font-family: "DM Mono", monospace;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin: 0;
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  text-align: center;
+}
+
+/* ─── List Wrap ──────────────────────────────────────── */
+
+.list-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+/* ─── Entry Card ─────────────────────────────────────── */
+
+.entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  background: var(--surface);
+  border: none;
+  border-bottom: 1px solid var(--border);
+  min-height: 4.5rem;
+  transition: background-color 0.15s ease;
+  position: relative;
+}
+
+.list > .entry:last-of-type {
+  border-bottom: none;
+}
+
+.entry:hover {
+  background-color: #fdfcfb;
+}
+
+/* Accent bar on left edge */
+.entry::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20%;
+  height: 60%;
+  width: 3px;
+  background: var(--border);
+  border-radius: 0 2px 2px 0;
+  transition:
+    background 0.2s ease,
+    height 0.2s ease,
+    top 0.2s ease;
+}
+
+.entry:has(.complete)::before {
+  background: var(--accent);
+  top: 0;
+  height: 100%;
+}
+
+/* ─── Entry Info ─────────────────────────────────────── */
+
+.entry-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.75rem 1rem 0.75rem 1.25rem;
+  flex-grow: 1;
+  overflow: hidden;
+  gap: 0.15rem;
+}
+
+.entry-info h2 {
+  margin: 0;
+  font-family: "Fraunces", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.entry-info p {
+  margin: 0;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.01em;
+}
+
+/* ─── Entry Progress ─────────────────────────────────── */
+
+.entry-progress {
+  display: flex;
+  align-items: stretch;
+}
+
+.progress-container {
+  display: flex;
+  align-items: stretch;
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 14rem;
+  padding: 0.5rem 1.2rem;
+  gap: 0.3rem;
+}
+
+.progress-parameters {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.progress-parameters input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: "DM Mono", monospace;
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  padding: 0;
+  min-width: 0;
+}
+
+.progress-parameters input:focus {
+  outline: none;
+}
+
+.no-arrows::-webkit-inner-spin-button,
+.no-arrows::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.no-arrows {
+  -moz-appearance: textfield;
+}
+
+.progress-parameters span {
+  font-family: "DM Mono", monospace;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.progress-parameters span::before {
+  content: "/";
+  margin-right: 0.2rem;
+  color: var(--border-strong);
+}
+
+/* Progress bar track */
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 99px;
+  display: block;
+}
+
+progress::-webkit-progress-bar {
+  background-color: var(--border);
+  border-radius: 99px;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--accent-muted);
+  border-radius: 99px;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+progress::-moz-progress-bar {
+  background-color: var(--accent-muted);
+  border-radius: 99px;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Full progress highlight */
+progress[value]:not([value="0"])::-webkit-progress-value {
+  background-color: var(--accent-muted);
+}
+
+.progress-unit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.progress-unit span {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ─── Progress Controls (+/-) ────────────────────────── */
+
+.progress-controls {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  border-left: 1px solid var(--border);
+}
+
+.progress-controls button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  padding: 0 0.9rem;
+  transition:
+    background-color 0.12s ease,
+    color 0.12s ease;
+  font-family: "DM Mono", monospace;
+  line-height: 1;
+}
+
+.progress-controls button:hover {
+  background-color: var(--accent-light);
+  color: var(--accent);
+}
+
+.progress-controls button:active {
+  background-color: var(--accent-muted);
+  color: var(--surface);
+}
+
+.progress-controls button:first-child {
+  border-bottom: 1px solid var(--border);
+}
+
+/* ─── Complete Button ────────────────────────────────── */
+
+.progress-completed {
+  aspect-ratio: unset;
+  width: 3.2rem;
+  align-self: stretch;
+  border: none;
+  border-left: 1px solid var(--border);
+  cursor: pointer;
+  background: transparent;
+  transition: background-color 0.25s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+}
+
+/* Checkmark via pseudo-element */
+.progress-completed::after {
+  content: "";
+  width: 10px;
+  height: 6px;
+  border-left: 2px solid var(--border-strong);
+  border-bottom: 2px solid var(--border-strong);
+  transform: rotate(-45deg) translateY(-1px);
+  transition: border-color 0.2s ease;
+}
+
+.progress-completed:hover::after {
+  border-color: var(--accent);
+}
+
+.progress-completed:hover {
+  background-color: var(--accent-light);
+}
+
+.progress-completed.complete {
+  background-color: var(--accent);
+}
+
+.progress-completed.complete::after {
+  border-color: white;
+}
+
+/* ═══════════════════════════════════════════════════════
+   GLOBAL RESETS & BASE
+   ═══════════════════════════════════════════════════════ */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 106.25%;
+}
+
+main {
+  height: calc(100vh - 3.5rem);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+button {
+  font-family: "DM Mono", monospace;
+  cursor: pointer;
+}
+
+/* ═══════════════════════════════════════════════════════
+   NAV
+   ═══════════════════════════════════════════════════════ */
+
+nav {
+  height: 3.5rem;
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+  padding: 0 2rem;
+}
+
+.link-list {
+  display: flex;
+  align-items: stretch;
+  gap: 0.25rem;
+}
+
+.link-list a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0 1.25rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  border-bottom: 2px solid transparent;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.link-list a:visited {
+  color: var(--text-secondary);
+}
+
+.link-list a:hover {
+  color: var(--text-primary);
+}
+
+.link-list a.active {
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--accent);
+}
+
+.sign-out {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.sign-out p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+#logout-btn {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--text-secondary);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-sm);
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+#logout-btn:hover {
+  background-color: var(--danger);
+  border-color: var(--danger);
+  color: white;
+}
+
+/* ═══════════════════════════════════════════════════════
+   AUTH PAGES (Login / Register)
+   ═══════════════════════════════════════════════════════ */
+
+.auth-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 1.5rem;
+}
+
+.auth-page h1 {
+  font-family: "Fraunces", serif;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 22rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+
+.auth-form button {
+  margin-top: 0.5rem;
+  padding: 0.65rem;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: opacity 0.15s ease;
+}
+
+.auth-form button:hover {
+  opacity: 0.88;
+}
+
+.auth-form button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.auth-error {
+  font-size: 0.75rem;
+  color: var(--danger);
+  letter-spacing: 0.02em;
+}
+
+.auth-link {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.auth-link a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
+/* ═══════════════════════════════════════════════════════
+   SHARED FORM INPUTS
+   ═══════════════════════════════════════════════════════ */
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-input label {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.form-input input,
+.form-input textarea,
+.form-input select {
+  font-family: "DM Mono", monospace;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.75rem;
+  transition: border-color 0.15s ease;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-input input:focus,
+.form-input textarea:focus,
+.form-input select:focus {
+  border-color: var(--border-strong);
+}
+
+.form-input textarea {
+  resize: vertical;
+  min-height: 4rem;
+}
+
+.input-pair {
+  display: flex;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.input-pair .form-input {
+  min-width: 0;
+  flex: 1;
+}
+
+.input-pair .form-input:first-child {
+  flex: 2;
+}
+
+/* ═══════════════════════════════════════════════════════
+   HABITS PAGE
+   ═══════════════════════════════════════════════════════ */
+
+.habit-page {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ─── Habit List ─────────────────────────────────────── */
+
+.habit-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  align-content: start;
+  gap: 1rem;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.add-btn-container {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0;
+}
+
+.add-btn-container > button {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px dashed var(--border-strong);
+  color: var(--text-secondary);
+  padding: 0.6rem 2rem;
+  border-radius: var(--radius-sm);
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.add-btn-container > button:hover {
+  background-color: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ─── Habit Card ─────────────────────────────────────── */
+
+.habit-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition:
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
+  overflow: hidden;
+  min-height: 14rem;
+  position: relative;
+}
+
+.habit-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.inactive {
+  background-color: var(--bg);
+  opacity: 0.65;
+}
+
+.habit-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 1rem 1.25rem;
+  height: 100%;
+  overflow: hidden;
+}
+
+.habit-controls {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  display: flex;
+  gap: 0;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.habit-card:hover .habit-controls {
+  opacity: 1;
+}
+
+.habit-controls button {
+  border: none;
+  border-right: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  padding: 0.35rem 0.6rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color 0.12s ease,
+    color 0.12s ease;
+}
+
+.habit-controls button:last-child {
+  border-right: none;
+}
+
+.habit-controls button:hover:not(:disabled) {
+  background-color: var(--border);
+  color: var(--text-primary);
+}
+
+.habit-controls button:last-child:hover:not(:disabled) {
+  background-color: #fde8e0;
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.habit-controls button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.habit-title {
+  font-family: "Fraunces", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.habit-description {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.habit-type,
+.habit-target,
+.habit-frequency {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.habit-type span,
+.habit-target span,
+.habit-frequency span {
+  color: var(--text-muted);
+  font-size: 0.65rem;
+}
+
+/* ─── Days of Week ───────────────────────────────────── */
+
+.habit-days-of-week {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: nowrap;
+  margin-top: auto;
+}
+
+.habit-day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  font-size: 0.55rem;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  background-color: var(--accent-light);
+  color: var(--accent);
+  min-width: 0;
+}
+
+.disabled-day {
+  background-color: var(--border);
+  color: var(--text-muted);
+}
+
+/* ─── Days of Week Form Input ────────────────────────── */
+
+.form-dow-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-dow-input > label {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.dow-input-list {
+  display: flex;
+  list-style: none;
+  gap: 0.4rem;
+  padding: 0;
+  margin: 0;
+}
+
+.input-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+.input-list-item input[type="checkbox"] {
+  accent-color: var(--accent);
+  width: 0.9rem;
+  height: 0.9rem;
+  cursor: pointer;
+}
+
+/* ═══════════════════════════════════════════════════════
+   SIDE PANEL
+   ═══════════════════════════════════════════════════════ */
+
+.habit-side-panel {
+  width: 380px;
+  border-left: 1px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.habit-side-panel > button {
+  align-self: flex-end;
+  margin: 1rem 1rem 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition:
+    background-color 0.12s ease,
+    color 0.12s ease;
+}
+
+.habit-side-panel > button:hover {
+  background-color: var(--border);
+  color: var(--text-primary);
+}
+
+.habit-create,
+.habit-update {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.habit-create h1,
+.habit-update h1 {
+  font-family: "Fraunces", serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--text-primary);
+}
+
+.habit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.habit-form > p {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.habit-form button[type="submit"] {
+  margin-top: 0.5rem;
+  padding: 0.65rem;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: opacity 0.15s ease;
+}
+
+.habit-form button[type="submit"]:hover {
+  opacity: 0.88;
+}
+
+.habit-form button[type="submit"]:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* ═══════════════════════════════════════════════════════
+   DELETE DIALOG
+   ═══════════════════════════════════════════════════════ */
+
+.habit-delete {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: 26rem;
+  height: fit-content;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.habit-delete p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.habit-delete p b {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.delete-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.delete-controls button {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  transition:
+    background-color 0.12s ease,
+    color 0.12s ease,
+    border-color 0.12s ease;
+}
+
+.delete-controls button:first-child:hover {
+  background-color: var(--border);
+  color: var(--text-primary);
+}
+
+.delete-controls button:last-child {
+  background-color: var(--danger);
+  border-color: var(--danger);
+  color: white;
+}
+
+.delete-controls button:last-child:hover {
+  opacity: 0.88;
+}
+
+.delete-controls button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
