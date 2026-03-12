@@ -6,9 +6,12 @@ export const EntryContextProvider = ({ children }) => {
   const [selectedDate, setSelectedDate] = useState(() =>
     new Date().toLocaleDateString("en-CA"),
   );
+  const [direction, setDirection] = useState();
 
   return (
-    <EntryContext.Provider value={{ selectedDate, setSelectedDate }}>
+    <EntryContext.Provider
+      value={{ selectedDate, setSelectedDate, direction, setDirection }}
+    >
       {children}
     </EntryContext.Provider>
   );

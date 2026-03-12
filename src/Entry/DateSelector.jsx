@@ -7,7 +7,7 @@ import {
 } from "react-icons/bi";
 
 function DateSelector() {
-  const { selectedDate, setSelectedDate } = useEntryContext();
+  const { selectedDate, setSelectedDate, setDirection } = useEntryContext();
 
   const today = new Date().toLocaleDateString("en-CA");
 
@@ -17,6 +17,7 @@ function DateSelector() {
   });
 
   const handleChangeDate = (nrOfDays) => {
+    setDirection(nrOfDays > 0 ? 1 : -1);
     setSelectedDate((prevDate) => {
       const [year, month, day] = prevDate.split("-").map(Number);
       const newDate = new Date(year, month - 1, day);
