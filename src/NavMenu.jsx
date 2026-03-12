@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useLogout } from "./Auth/authQueryHooks";
 import { useAuth } from "./Auth/context";
+import ThemeSwitcher from "./Theme/Switcher";
 
 function NavMenu() {
   const { user } = useAuth();
@@ -14,6 +15,7 @@ function NavMenu() {
       </div>
       {user && (
         <div className="sign-out">
+          <ThemeSwitcher />
           <p>Hello {user.email}</p>
           <button id="logout-btn" onClick={logout} disabled={isPending}>
             Sign out
