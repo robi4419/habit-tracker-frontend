@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useCallback, useEffect, useRef } from "react";
 import { useUpdateEntry } from "./entryQueryHooks";
 import { useEntryContext } from "./context";

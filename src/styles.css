@@ -546,6 +546,12 @@ body {
   font-size: 106.25%;
 }
 
+body {
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
 main {
   height: calc(100vh - 3.5rem);
 }
