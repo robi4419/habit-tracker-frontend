@@ -14,21 +14,24 @@ export const useFetchHabits = () => {
   });
 };
 
-export const useFetchHabit = (id) => {
-  return useQuery({
-    queryKey: ["data", "habits", { id }],
-    queryFn: async () => {
-      if (!id) return null;
-      const { data } = await habitsAPI.get("/habits/" + id);
+export const fetchHabitQueryOptions = (id) => ({
+  queryKey: ["data", "habits", { id }],
+  queryFn: async () => {
+    if (!id) return null;
+    const { data } = await habitsAPI.get("/habits/" + id);
 
-      return data;
-    },
-    retry: (failureCount, error) => {
-      if (error.response?.status === 404) return false;
-      return failureCount < 3;
-    },
-    refetchOnWindowFocus: false,
-  });
+    return data;
+  },
+  retry: (failureCount, error) => {
+    if (error.response?.status === 404) return false;
+    return failureCount < 3;
+  },
+  refetchOnWindowFocus: false,
+  staleTime: Infinity,
+});
+
+export const useFetchHabit = (id) => {
+  return useQuery(fetchHabitQueryOptions(id));
 };
 
 export const useCreateHabit = () => {

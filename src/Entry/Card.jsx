@@ -1,14 +1,8 @@
 import { useState, useCallback, useEffect, useRef } from "react";
-import { useFetchHabit } from "../Habit/habitQueryHooks";
 import { useUpdateEntry } from "./entryQueryHooks";
 import { useEntryContext } from "./context";
 
-function EntryCard({ id, habit_id, completed, value }) {
-  const {
-    data: habit,
-    isPending: isPendingHabit,
-    error,
-  } = useFetchHabit(habit_id);
+function EntryCard({ id, completed, value, habit }) {
   const { selectedDate } = useEntryContext();
   const { mutate: updateEntry } = useUpdateEntry(selectedDate);
 
@@ -132,9 +126,6 @@ function EntryCard({ id, habit_id, completed, value }) {
     return () =>
       document.removeEventListener("visibilitychange", handleVisibilityChange);
   }, [handleInputValidation]);
-
-  if (isPendingHabit) return <p>Pending...</p>;
-  if (error) return null;
 
   return (
     <div className="entry">
