@@ -62,7 +62,7 @@ function HabitCard({
         </p>
         <p className="habit-type">
           <span>Type · </span>
-          {type}
+          {type == "binary" ? "checkbox" : "with progress"}
         </p>
         {type == "count" && (
           <p className="habit-target" title={unit}>
