@@ -64,8 +64,8 @@ function CreateHabit() {
             onChange={handleTypeChange}
             value={type}
           >
-            <option value="binary">binary</option>
-            <option value="count">count</option>
+            <option value="binary">checkbox</option>
+            <option value="count">with progress</option>
           </select>
         </div>
         {type == "count" && (

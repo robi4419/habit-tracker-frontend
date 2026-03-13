@@ -55,7 +55,7 @@ function UpdateHabit({ habitToEdit }) {
             defaultValue={habit.description}
           />
         </div>
-        <p>Type: {habit.type}</p>
+        <p>Type: {habit.type == "binary" ? "checkbox" : "with progress"}</p>
         {habit.type == "count" && (
           <div className="input-pair">
             <div className="form-input">
