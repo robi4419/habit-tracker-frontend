@@ -1481,3 +1481,64 @@ nav {
     border-radius: 0;
   }
 }
+
+/* ─── Habits: full-width side panel on mobile ────────── */
+
+@media (max-width: 768px) {
+  .habit-page {
+    grid-template-columns: 1fr;
+    position: relative;
+  }
+
+  .habit-side-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.12);
+    z-index: 50;
+  }
+
+  .habit-create,
+  .habit-update {
+    padding: 1rem;
+  }
+
+  /* ─── Theme dropdown: full width ─────────────────────  */
+
+  .theme-dropdown {
+    position: fixed;
+    top: 3.5rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    box-sizing: border-box;
+  }
+
+  .theme-columns {
+    justify-content: center;
+  }
+
+  .theme-section {
+    width: 140px;
+    max-height: 60vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .habit-delete {
+    width: calc(100% - 2rem) !important;
+    left: 1rem;
+    right: 1rem;
+    padding: 1.5rem;
+    box-sizing: border-box;
+  }
+}
